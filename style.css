@@ -598,6 +598,26 @@ nav {
 }
 
 
+/* PROJECT IMAGE */
+
+.project-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+    transition: .5s;
+}
+
+.project-preview:hover .project-image {
+    transform: scale(1.04);
+}
+
+
 /* browser preview */
 
 .browser {
@@ -739,6 +759,56 @@ nav {
     padding: 7px 10px;
     border: 1px solid #292932;
     color: #aaa;
+}
+
+
+/* VIEW PROJECT BUTTON */
+
+.project-btn {
+    display: inline-block;
+    margin-top: 25px;
+
+    padding: 12px 20px;
+
+    color: var(--cyan);
+    background: rgba(0,247,255,.03);
+
+    border: 1px solid rgba(0,247,255,.4);
+
+    text-decoration: none;
+
+    font-family: "Orbitron";
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.project-btn:hover {
+    color: #000;
+    background: var(--cyan);
+    border-color: var(--cyan);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 0 25px rgba(0,247,255,.25);
+}
+
+
+/* IMAGE MODE */
+
+.project-preview:has(.project-image) .project-image {
+    display: block;
+}
+
+.project-preview:has(.project-image) .browser,
+.project-preview:has(.project-image) .dashboard,
+.project-preview:has(.project-image) .movie-title,
+.project-preview:has(.project-image) .movie-cards,
+.project-preview:has(.project-image) .code-lines,
+.project-preview:has(.project-image) .code-window {
+    display: none;
 }
 
 
